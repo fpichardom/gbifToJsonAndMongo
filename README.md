@@ -11,6 +11,8 @@ pais,provincia,localidad,colectores,nombre_cientifico
 República Dominicana,Santiago,"Loma La Pelona, Coordillera Central","Juan Pérez,Pancho Díaz",Pinus occidentalis
 
 ### Mismo documento en json
+
+```javascript
 {
   "pais": "República Dominicana",
   "provincia": "Santiago",
@@ -18,7 +20,7 @@ República Dominicana,Santiago,"Loma La Pelona, Coordillera Central","Juan Pére
   "collectores":"Juan Pérez, Pancho Díaz",
   "nombre_cientifico": "Pinus occidentalis"
  }
- 
+ ```
  Esto sería una conversión literal, pero no aprovechamos la flexibilidad que nos da el formato json. Por ejemplo podemos separar los nombres de los colectores para permitir búsquedas individuales:
  
  {
