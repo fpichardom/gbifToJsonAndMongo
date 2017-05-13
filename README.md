@@ -6,6 +6,10 @@
 
 - Python 3.x.x
 
+## Funcionamiento
+
+**gbif2geojson.py :** Toma los registros de gbif creando un objecto de cada record eliminando las casillas vacas y convirtiendo el campo de "decimalLongitude" y "decimalLatitude" en coordenadas geojson del tipo punto. Su funcinoamiento depende de que cada registro tenga una latitud y longitud válida. Por lo que se recomienda filtrar los registros con coordenadas válidas directamente del gbif
+
 ## Que es Json y Geojson
 
 El formato **json** o **"javascript object notation"** consiste en una serie de valores en formato "key value pairs". Permite valores tanto de tipo numérico, texto, y otros objetos. Esta capacidad de poder tener otros objetos como valores le permite flexibilidad en la estructura en comparación a formatos populares como csv.
@@ -45,23 +49,24 @@ República Dominicana,Santiago,"Loma La Pelona, Coordillera Central","Juan Pére
  
  ```javascript
  {
-  "pais": "República Dominicana",
-  "provincia": "Santiago",
-  "localidad": "Loma La Pelona, Coordillera Central",
-  "collectores": [
+ "pais": "República Dominicana",
+ "provincia": "Santiago",
+ "localidad": "Loma La Pelona, Coordillera Central",
+ "collectores": [
+   {
+     "nombre": "Juan",
+     "apellido": "Pérez"
+    },
     {
-      "nombre": "Juan",
-      "apellido: "Pérez"
-     },
-     {
-      "nombre": "Pancho",
-      "apellido": "Díaz"
-     }
-  ],
-  "especie": {
-    "genero":"Pinus"
-    "epitetoEspecifico": "occidentalis"
+     "nombre": "Pancho",
+     "apellido": "Díaz"
+    }
+ ],
+ "especie": {
+   "genero":"Pinus",
+   "epitetoEspecifico": "occidentalis"
  }
+}
  ```
  
  Este json está identado para ayudar la facilidad de lectura para los humanos, pero igual puede estar todo en una sola línea si el espacio es un problema. Pero como pueden ver cuando se abre un **csv** o **json** en un editor de texto cualquiera, json tiene la ventaja que es mucho más lejible para los humanos, claro que esto lleva la desventaja de que ocupa más espacio en disco o memoria. Pero solo debería ser de preocupación en caso de tener un json con demasiada data. Y es aquí donde entran bases de datos de tipo noSQL al rescate, pues nos permiten manejar archivos json enormes ya que por ejemplo el formato base de **MongoDB** es una variante muy similar de json.
