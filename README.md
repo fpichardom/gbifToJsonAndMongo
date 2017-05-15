@@ -8,7 +8,7 @@
 
 ## Funcionamiento
 
-**gbif2geojson.py :** Toma los registros de gbif creando un objecto de cada record eliminando las casillas vacas y convirtiendo el campo de "decimalLongitude" y "decimalLatitude" en coordenadas geojson del tipo punto. Su funcinoamiento depende de que cada registro tenga una latitud y longitud válida. Por lo que se recomienda filtrar los registros con coordenadas válidas directamente del gbif
+**gbif2geojson.py :** Toma los registros de gbif creando un objecto de cada record eliminando las casillas vacías y convirtiendo el campo de "decimalLongitude" y "decimalLatitude" en coordenadas geojson del tipo punto. Su funcinoamiento depende de que cada registro tenga una latitud y longitud válida. Por lo que se recomienda filtrar los registros con coordenadas válidas directamente del gbif
 
 ## Que es Json y Geojson
 
