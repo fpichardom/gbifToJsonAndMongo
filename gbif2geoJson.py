@@ -8,6 +8,14 @@ Takes the csv downloaded from gbif and formats it into geojson format
 
 import json
 import csv
+import sys
+
+
+# Set default encoding to utf-8
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 
 #Load csv file
 input_file = input('Enter file name/path: ')
